@@ -1,66 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Films et Séries</title>
+    <title>Cinetech - Accueil</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 <body>
-    <h1>Films et Séries Actuels</h1>
-    <h2>Films</h2>
-    <ul id="films-list"></ul>
-    <h2>Séries</h2>
-    <ul id="series-list"></ul>
+    <header>
+        <div class="container">
+            <h1 class="title">Cinetech</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Films</a></li>
+                    <li><a href="#">Séries</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Rechercher...">
+                <button>Rechercher</button>
+            </div>
+        </div>
+    </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        const apiKey = '8c4b867188ee47a1d4e40854b27391ec';
-        const filmsUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=fr-FR&page=1`;
-        const seriesUrl = `https://api.themoviedb.org/3/tv/on_the_air?api_key=${apiKey}&language=fr-FR&page=1`;
-
-        // Fonction pour récupérer les films actuels
-        async function getNowPlayingFilms() {
-            try {
-                const response = await axios.get(filmsUrl);
-                if (response.status === 200) {
-                    const films = response.data.results;
-                    const filmsList = document.getElementById('films-list');
-                    films.forEach(film => {
-                        const listItem = document.createElement('li');
-                        listItem.textContent = film.title;
-                        filmsList.appendChild(listItem);
-                    });
-                } else {
-                    console.log('Erreur lors de la requête des films.');
-                }
-            } catch (error) {
-                console.error('Erreur lors de la requête des films:', error);
-            }
-        }
-
-        // Fonction pour récupérer les séries actuelles
-        async function getOnTheAirSeries() {
-            try {
-                const response = await axios.get(seriesUrl);
-                if (response.status === 200) {
-                    const series = response.data.results;
-                    const seriesList = document.getElementById('series-list');
-                    series.forEach(serie => {
-                        const listItem = document.createElement('li');
-                        listItem.textContent = serie.name;
-                        seriesList.appendChild(listItem);
-                    });
-                } else {
-                    console.log('Erreur lors de la requête des séries.');
-                }
-            } catch (error) {
-                console.error('Erreur lors de la requête des séries:', error);
-            }
-        }
-
-        // Appel des fonctions pour récupérer les films et les séries
-        getNowPlayingFilms();
-        getOnTheAirSeries();
-    </script>
+    <main>
+        <div class="container">
+            <section class="movies">
+                <h2>Films</h2>
+                <!-- Place for movie posters -->
+            </section>
+            <section class="series">
+                <h2>Séries</h2>
+                <!-- Place for series posters -->
+            </section>
+        </div>
+    </main>
 </body>
 </html>

@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: black;
+    color: red;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.title {
+    color: red;
+    float: left;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: red;
+    width: 150px;
+    height: 100%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.search {
+    float: right;
+}
+
+.search input[type="text"] {
+    padding: 5px;
+}
+
+.search button {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    margin-left: 170px; /* Adjust according to nav width */
+    margin-top: 80px; /* Adjust according to header height */
+}
+
+.movies, .series {
+    margin-bottom: 40px;
+}
+
+.movies h2, .series h2 {
+    color: red;
+}
+
+.movies img, .series img {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
