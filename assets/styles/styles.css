@@ -23,7 +23,7 @@ header {
 
 .title {
     color: red;
-    float: left;
+    margin-left: 20px; /* Adjust as needed */
 }
 
 nav {

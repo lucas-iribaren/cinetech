@@ -1,18 +1,26 @@
-const axios = require('axios');
+const apiKey = 'd47a71e6bd7db6070f8a4a2b9b17aaa5';
+const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=&include_adult=false&language=fr-FR&page=1`;
 
-const apiKey = '8c4b867188ee47a1d4e40854b27391ec';
-const url = 'https://api.themoviedb.org/3/movie/11?api_key=' + apiKey;
-
-axios.get(url)
-    .then(response => {
-        // Vérification du statut de la réponse
-        if (response.status === 200) {
-            // Affichage des données du film dans la console
-            console.log(response.data);
-        } else {
-            console.log('Erreur lors de la requête à l\'API.');
-        }
-    })
-    .catch(error => {
-        console.error('Erreur lors de la requête à l\'API:', error);
+const fetchMovies = async () => {
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    
+    const movies = data.results; // Récupère la liste des films depuis la réponse de l'API
+    const moviesSection = document.querySelector('.movies'); // Sélectionne la section des films dans le HTML
+    
+    // Boucle à travers chaque film
+    movies.forEach(movie => {
+      // Crée un élément de paragraphe pour afficher le titre du film
+      const movieTitle = document.createElement('p');
+      movieTitle.textContent = movie.title; // Récupère le titre du film depuis les données de l'API
+      
+      // Ajoute le titre à la section des films
+      moviesSection.appendChild(movieTitle);
     });
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+fetchMovies();
