@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/styles.css">
     <title>Cinetech - Accueil</title>
-    
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1 class="title">Cinetech</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="#">Films</a></li>
-                    <li><a href="#">Séries</a></li>
-                    <li><a href="#">Favoris</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="search">
-                <input type="text" placeholder="Rechercher...">
-                <button>Rechercher</button>
-            </div>
-        </div>
+        <form id="form">
+            <input type="text" placeholder="Rechercher..." id="search" class="search">
+        </form>
     </header>
 
-    <main>
-        <div class="container">
-            <section class="movies">
-                <h2>Films</h2>
-                <!-- Place for movie posters -->
-            </section>
-            <section class="series">
-                <h2>Séries</h2>
-                <!-- Place for series posters -->
-            </section>
+    <main id="main">
+        <div class="movie">
+            <img src="assets/images/sieges_cinema.jpg" alt="image" class="movie-img">
+            <div class="movie-info">
+                <h3>Titre du film</h3>
+                <span class="green">9.8</span>
+            </div>
+
+            <div class="overview">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse at ea laboriosam quasi est autem perferendis soluta deserunt?
+            </div>
+        </div>
+
+        <div class="movie">
+            <img src="assets/images/sieges_cinema.jpg" alt="image" class="movie-img">
+            <div class="movie-info">
+                <h3>Titre du film</h3>
+                <span class="green">9.8</span>
+            </div>
+
+            <div class="overview">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse at ea laboriosam quasi est autem perferendis soluta deserunt?
+            </div>
+        </div>
+        <div class="movie">
+            <img src="assets/images/sieges_cinema.jpg" alt="image" class="movie-img">
+            <div class="movie-info">
+                <h3>Titre du film</h3>
+                <span class="green">9.8</span>
+            </div>
+
+            <div class="overview">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse at ea laboriosam quasi est autem perferendis soluta deserunt?
+            </div>
         </div>
     </main>
 
