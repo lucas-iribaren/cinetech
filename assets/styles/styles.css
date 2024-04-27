@@ -72,6 +72,13 @@ header{
     color: white;
 }
 
+.section-title {
+    text-align: left;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    color: white;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
