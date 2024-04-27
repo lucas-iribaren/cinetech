@@ -20,8 +20,15 @@ header{
 .header-content {
     display: flex;
     justify-content: space-between; /* Aligne le titre à gauche et la barre de recherche à droite */
+    align-items: center;
     width: 100%; /* Assure que le conteneur prend toute la largeur disponible */
-    gap: 1rem;
+    position: relative;
+}
+
+.header-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centre horizontalement */
 }
 
 .header-title {
@@ -35,7 +42,6 @@ header{
     padding: 0;
     display: flex;
     gap: 1rem; /* Ajoute un espace entre les éléments de la liste */
-    justify-content: center;
 }
 
 .header-nav a {
